@@ -9,7 +9,7 @@ public class CarListTest {
     public void setUp() throws Exception {
         carList = new CarArrayList();
         for (int i = 0; i < 100; i++) {
-            carList.add(new Car("Brand" + i, i));
+            carList.add(new Car("brand", i));
         }
     }
 
@@ -56,7 +56,30 @@ public class CarListTest {
     @Test
     public void getReturnRightValue() {
         Car car = carList.get(0);
-        assertEquals("Brand0", car.getBrand());
+        assertEquals("brand", car.getBrand());
 
     }
-}
+
+    @Test
+    public void insertInToMiddle() {
+        Car car = new Car("brand", 0);
+        carList.add(car, 50);
+        Car carFromList = carList.get(50);
+        assertEquals("brand", carFromList.getBrand());
+    }
+        @Test
+        public void insertInToFirstPosition () {
+            Car car = new Car("brand", 0);
+            carList.add(car, 0);
+            Car carFromList = carList.get(0);
+            assertEquals("brand", carFromList.getBrand());
+        }
+            @Test
+            public void insertInToEnd () {
+                Car car = new Car("brand", 0);
+                carList.add(car, 99);
+                Car carFromList = carList.get(99);
+                assertEquals("brand", carFromList.getBrand());
+
+            }
+        }

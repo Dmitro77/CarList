@@ -18,7 +18,22 @@ public class CarArrayList implements CarList {
         array[size] = car;
         size++;
 
+
     }
+
+
+    @Override
+    public void add(Car car, int index) {
+
+    }
+
+    @Override
+    public void add(Car car, int index) {
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+    }
+
 
     @Override
     public boolean remove(Car car) {
