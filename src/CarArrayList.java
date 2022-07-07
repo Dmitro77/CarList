@@ -22,10 +22,7 @@ public class CarArrayList implements CarList {
     }
 
 
-    @Override
-    public void add(Car car, int index) {
 
-    }
 
     @Override
     public void add(Car car, int index) {

@@ -7,7 +7,7 @@ public class CarListTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        carList = new CarArrayList();
+        carList = new CarLinkedList();
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("brand", i));
         }
@@ -67,19 +67,21 @@ public class CarListTest {
         Car carFromList = carList.get(50);
         assertEquals("brand", carFromList.getBrand());
     }
-        @Test
-        public void insertInToFirstPosition () {
-            Car car = new Car("brand", 0);
-            carList.add(car, 0);
-            Car carFromList = carList.get(0);
-            assertEquals("brand", carFromList.getBrand());
-        }
-            @Test
-            public void insertInToEnd () {
-                Car car = new Car("brand", 0);
-                carList.add(car, 99);
-                Car carFromList = carList.get(99);
-                assertEquals("brand", carFromList.getBrand());
 
-            }
-        }
+    @Test
+    public void insertInToFirstPosition() {
+        Car car = new Car("brand", 0);
+        carList.add(car, 0);
+        Car carFromList = carList.get(0);
+        assertEquals("brand", carFromList.getBrand());
+    }
+
+    @Test
+    public void insertInToEnd() {
+        Car car = new Car("brand", 0);
+        carList.add(car, 99);
+        Car carFromList = carList.get(99);
+        assertEquals("brand", carFromList.getBrand());
+
+    }
+}
